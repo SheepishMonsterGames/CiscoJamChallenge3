@@ -33,7 +33,7 @@ def run():
         for value in responses:
             if value is not False and bot.response_string == " " and value is not None:
                 bot.response_string = str(value)
-            elif value is not False:
+            elif value is not False and value is not None:
                 bot.response_string += "<br>" + str(value)
             else:
                 count += 1

@@ -2,7 +2,7 @@ import importlib
 
 from spark2d2.bot import Bot
 
-handler_modules = ['repeater.Repeater', 'futurama.Futurama', 'eightball.Eightball'
+handler_modules = ['repeater.Repeater', 'futurama.Futurama', 'eightball.Eightball',
                    'vote.Vote', 'meaningoflife.MeaningOfLife', 'numbers.Numbers', 'trivia.Trivia',
                    'nocommand.NoCommand']
 

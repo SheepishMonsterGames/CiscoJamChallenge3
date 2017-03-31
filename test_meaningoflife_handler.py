@@ -11,10 +11,10 @@ class testMeaningOfLife(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         super(testMeaningOfLife, cls).setUpClass()
-        log.getLogger("testFuturama")
-        with open("test_logs/futurama_test.log", 'w') as test_file:
+        log.getLogger("testMeaningOfLife")
+        with open("test_logs/meaningoflife_test.log", 'w') as test_file:
             test_file.truncate()
-        log.basicConfig(filename='test_logs/futurama_test.log', level=log.DEBUG,
+        log.basicConfig(filename='test_logs/meaningoflife_test.log', level=log.DEBUG,
                         format='[%(asctime)s]:%(levelname)s: %(message)s')
         cls.utils = Utils()
 
@@ -39,6 +39,24 @@ class testMeaningOfLife(unittest.TestCase):
                           % (response, expected))
 
         self.utils.end_banner("Finished Test 100")
+
+    def test_101_meaning_of_life_different_user(self):
+        """
+            Simple test to check meaning of life works and returns "42 <username>".
+        """
+        self.utils.banner("Starting Test 101 meaning of life command different user")
+
+        response = self.meaningoflife.handle_message("{}".format("meaning of life"),
+                                                     "im_different@email.mail",
+                                                     username="different_user")
+
+        expected = "42 different_user"
+
+        self.assertEquals(response, expected,
+                          "ERROR, response \"%s\" was not the same as expected response %s."
+                          % (response, expected))
+
+        self.utils.end_banner("Finished Test 101")
 
     @classmethod
     def tearDownClass(cls):

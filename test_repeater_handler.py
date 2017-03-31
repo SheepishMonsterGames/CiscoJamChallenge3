@@ -11,10 +11,10 @@ class testRepeater(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         super(testRepeater, cls).setUpClass()
-        log.getLogger("testFuturama")
-        with open("test_logs/eightball_test.log", 'w') as test_file:
+        log.getLogger("testRepeater")
+        with open("test_logs/repeater_test.log", 'w') as test_file:
             test_file.truncate()
-        log.basicConfig(filename='test_logs/eightball_test.log', level=log.DEBUG,
+        log.basicConfig(filename='test_logs/repeater_test.log', level=log.DEBUG,
                         format='[%(asctime)s]:%(levelname)s: %(message)s')
         cls.utils = Utils()
 
@@ -92,7 +92,7 @@ class testRepeater(unittest.TestCase):
 
     def tearDown(self):
         super(testRepeater, self).tearDownClass()
-        self.futurama = None
+        self.repeater = None
 
 if __name__ == '__main__':
     unittest.main()

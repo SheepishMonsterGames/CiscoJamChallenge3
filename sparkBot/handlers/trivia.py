@@ -44,6 +44,7 @@ class Trivia(MessageHandler):
 
             :return: a trivia question.
         """
+        pass
 
     def get_trivia_answer(self):
         """

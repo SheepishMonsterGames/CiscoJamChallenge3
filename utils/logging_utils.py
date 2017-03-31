@@ -2,6 +2,7 @@
     Sup.
 """
 import logging as log
+import os
 
 class Utils(object):
 
@@ -26,3 +27,4 @@ class Utils(object):
 
     def log(self, msg):
         log.info(msg)
+
